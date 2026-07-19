@@ -1,32 +1,25 @@
-"use client";
-import "./globals.css";
+import "./App.css";
 
 import { useState } from 'react';
 
-import AssignmentForm from "./components/assignmentForm";
-import AssignmentList from "./components/assignmentList";
+import AssignmentForm from './components/AssignmentForm';
+import AssignmentList from './components/AssignmentList';
 
-interface Assignment {
-  
-  title: string; 
-  completed: boolean;
-}
+function App() {
+  const[assignments,setAssignments]=useState([]);
 
- export default function Page() {
-  const[assignments,setAssignments]=useState<Assignment[]>([]);
-
-  const addAssignment=(assignment:Assignment)=>{
+  const addAssignment=(assignment)=>{
   setAssignments([...assignments,assignment]);
 };
 
-const deleteAssignment= (index: number)=>{
+const deleteAssignment= (index)=>{
   const updatedAssignments= assignments.filter(
    (_,i) =>i !==index
   );
   setAssignments(updatedAssignments);
 };
 
-const completeAssignment= (index: number)=>{
+const completeAssignment= (index)=>{
   const updatedAssignments= [...assignments];
   
   updatedAssignments[index].completed=true;
@@ -46,4 +39,4 @@ const completeAssignment= (index: number)=>{
   );
 }  
 
-;
+export default App;
