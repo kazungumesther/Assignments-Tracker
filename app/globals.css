@@ -1,16 +1,7 @@
-/* @import "tailwindcss"; */
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
-
-/* @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-} */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -19,66 +10,109 @@
   }
 }
 
-body{
+body {
   font-family: Arial, sans-serif;
   background-color: rgb(232, 237, 239);
   padding: 20px;
 }
 
-h1{
-  color:#121212
+h1 {
+  color: #121212;
 }
-input{
+
+input {
   padding: 10px;
   margin: 5px;
 }
-button{
+
+button {
   padding: 10px;
   background-color: green;
   color: antiquewhite;
   border: none;
   cursor: pointer;
 }
-button:hover{
-  background-color: antiquewhite;
+
+button:hover {
+  background-color: rgb(229, 191, 141);
 }
-.assignment-card{
+
+.assignment-form {
+  margin-bottom: 30px;
+}
+
+.form-fields-container {
+  display: flex;
+  gap: 15px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.text-input, 
+.date-input {
+  height: 38px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.date-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.date-label {
+  font-size: 13px;
+  font-weight: bold;
+  color: #475569;
+}
+
+.submit-btn {
+  height: 38px;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.assignment-card {
   background: white;
   padding: 15px;
   margin-top: 10px;
   border-radius: 8px;
-  box-shadow: 02px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.delete-btn{
+
+.delete-btn {
   background-color: rgb(195, 25, 25);
   color: white;
   border: none;
-  padding: 10px, 15px;
+  padding: 10px 15px;
   margin-right: 15px;
   border-radius: 5px;
   cursor: pointer;
 }
-.done-btn{
-background-color: green;
-border: none;
-padding: 10px, 15px;
-border-radius: 5px;
-cursor: pointer;
+
+.done-btn {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.Overdue{
-  color:red;
+.Overdue,
+.invalid-date {
+  color: red;
   font-weight: bold;
 }
-.OnTime{
+
+.OnTime,
+.completed {
   color: green;
   font-weight: bold;
 }
-.completed{
-  color: green;
-  font-weight: bold;
-}
-.pending{
+
+.pending {
   color: orange;
   font-weight: bold;
 }
