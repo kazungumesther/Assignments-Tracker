@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+#  Student Assignment Tracker
 
-## Getting Started
+A dynamic, fast-loading web application designed to help students track their academic tasks, manage deadlines, and stay on top of their coursework schedules.
 
-First, run the development server:
+---
+
+## Live Demo
+
+Check out the live application here: **[(https://assignments-tracker-psi.vercel.app/ )** 
+
+---
+
+##  Features
+
+*   **Add Assignments:** Input task details including **Assignment Title**, **Course Name**, **Start Date**, and **End/Due Date**.
+*   **Status Tracking:** Automatically displays visual status badges like **Pending** or **Completed**.
+*   **Punctuality Indicators:** Displays real-time tags such as **On Time** based on your timeline goals.
+*   **Task Management:** Mark tasks completed dynamically using the **Mark as Done** button or remove items entirely with the **Delete** button.
+
+---
+
+## Tech Stack
+
+*   **Framework:** [Next.js](https://nextjs.org) (Utilizing the Next.js App Router framework)
+*   **Bundler:** [Turbopack](https://nextjs.orgdocs/app/api-reference/turbopack) (Optimized for instantaneous hot-reloading during development)
+*   **Languages:** CSS, JavaScript, TypeScript
+*   **Styling:** Custom component-driven CSS layout structure
+
+---
+
+##  Project Structure
+
+Here is a breakdown of the specific project architecture visible in your repository workspace:
+
+```text
+assignments-tracker/
+├── app/
+│   ├── components/
+│   │   ├── assignmentForm.js   # Manages state and logic for inputting new tasks
+│   │   ├── assignmentItem.js   # Handles layouts, badges, and action triggers for single tasks
+│   │   └── assignmentList.js   # Maps over datasets to render the list of assignment cards
+│   ├── app.js                 # Global state controller or custom provider module
+│   ├── globals.css            # Global design token styling rules
+│   ├── layout.tsx             # Root page shell container structure
+│   └── page.tsx               # Main entry view layout handling component communication
+├── public/                    # SVG components and global web assets
+└── config files               # tsconfig.json, next.config.ts, postcss.config.mjs
+```
+
+---
+
+##  Getting Started
+
+Follow these instructions to spin up the tracker locally on your development system.
+
+###  Prerequisites
+
+Ensure you have **Node.js** (v18.x or newer) and **npm** installed.
+
+###  Local Setup
+
+1. Clone your workspace repository:
+   ```bash
+   git clone https://github.com
+   ```
+
+2. Access the project directory root:
+   ```bash
+   cd assignments-tracker
+   ```
+
+3. Download dependency nodes:
+   ```bash
+   npm install
+   ```
+
+###  Booting the Dev Environment
+
+Run the Turbopack engine local build suite:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Navigate your browser to [http://localhost:3000](http://localhost:3000) to start managing your assignments.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+##  Production Deployment
 
-## Learn More
+To compile a highly-optimized distribution version:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To run the built distribution package locally:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run start
+```
